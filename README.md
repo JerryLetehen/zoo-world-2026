@@ -22,6 +22,35 @@ Unity **6000.3.28f1** (URP).
 - Provider: arenas and configuration sit behind provider interfaces.
 - Data-driven ScriptableObjects: animals, configs, arena catalog.
 
+## Game settings
+
+All tunable values are ScriptableObject assets, edited in the Inspector. No code changes are needed.
+
+Global settings live in `Assets/_Game/Settings/Config`:
+
+| Asset | Setting | Default | Meaning |
+|---|---|---|---|
+| `SpawnConfig` | `MinInterval` / `MaxInterval` | 1 / 2 | Seconds between spawns, picked at random in this range. |
+| | `WallMargin` | 0.5 | Distance kept from the walls when choosing a spawn point. |
+| | `MaxPlacementAttempts` | 16 | Tries to find a free spawn point before skipping a spawn. |
+| `CameraConfig` | `Height` | 30 | Camera height above the arena. |
+| | `PanSpeed` | 10 | How fast drag-panning moves the camera. |
+| `LabelConfig` | `Text` | Tasty! | Text shown when a predator eats. |
+| | `Lifetime` / `FadeDuration` | 1 / 0.3 | How long the label lives and how long it fades out. |
+| `PhysicsConfig` | `DetectionMode` | ContinuousDynamic | Collision detection mode of animal bodies, used to avoid tunneling through walls. |
+| | `Interpolation` | Interpolate | Rigidbody interpolation. |
+| | `Bounciness` / `Friction` | 0.1 / 0.4 | Shared animal physics material. |
+
+Per-animal movement settings live in `Assets/_Game/Settings/Animals`:
+
+| Asset | Setting | Default | Meaning |
+|---|---|---|---|
+| `FrogMovement` | `HopInterval` | 1.5 | Seconds between hops. A hop also waits until the frog has landed. |
+| | `HopDistance` | 1.5 | Horizontal distance of one hop. |
+| | `PeakHeight` | 1.5 | Height of the hop arc. |
+| | `RestSpeedThreshold` | 0.05 | Speed below which the frog counts as landed. |
+| `SnakeMovement` | `Speed` | 5 | Units per second along a straight line. |
+
 ## How to add new animals
 
 1. Create an animal prefab with an `AnimalView`, a Rigidbody, a collider and one movement component (see below).

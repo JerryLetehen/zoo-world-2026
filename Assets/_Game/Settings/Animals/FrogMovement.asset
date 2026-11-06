@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: FrogMovement
   m_EditorClassIdentifier: ZooWorld.Runtime::ZooWorld.Config.JumpMovementConfigAsset
   value:
+    HopInterval: 1.5
     PeakHeight: 1.5
     HopDistance: 1.5
     RestSpeedThreshold: 0.05

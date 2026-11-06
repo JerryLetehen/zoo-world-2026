@@ -23,10 +23,13 @@ namespace ZooWorld.Movement
             this.visibleArea = visibleArea;
             Heading = initialHeading.sqrMagnitude > Mathf.Epsilon ? initialHeading.normalized : Vector3.forward;
 
+            OnActivated();
             StartTicking();
         }
 
         public void Deactivate() => StopTicking();
+
+        protected virtual void OnActivated() { }
 
 
         protected abstract void Move(float fixedDeltaTime);

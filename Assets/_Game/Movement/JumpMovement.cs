@@ -7,14 +7,20 @@ namespace ZooWorld.Movement
     {
         [SerializeField] private JumpMovementConfigAsset config;
 
+        private float secondsSinceHop;
+
+        protected override void OnActivated() => secondsSinceHop = 0f;
+
         protected override void Move(float fixedDeltaTime)
         {
             var settings = config.Value;
-            if (!IsAtRest(settings.RestSpeedThreshold))
+            secondsSinceHop += fixedDeltaTime;
+            if (secondsSinceHop < settings.HopInterval || !IsAtRest(settings.RestSpeedThreshold))
             {
                 return;
             }
 
+            secondsSinceHop = 0f;
             var takeoffSpeed = Mathf.Sqrt(2f * Mathf.Abs(Physics.gravity.y) * settings.PeakHeight);
             var impulse = Vector3.up * takeoffSpeed + HorizontalHopVelocity(takeoffSpeed, settings.HopDistance);
             Body.AddForce(impulse * Body.mass, ForceMode.Impulse);
