@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2e31167ef6be4022973aeea0f3e80ff, type: 3}
+  m_Name: ArenaCatalog
+  m_EditorClassIdentifier: ZooWorld.Runtime::ZooWorld.Arena.ArenaCatalog
+  entries:
+  - Id: rectangle
+    Prefab: {fileID: 8524743340009315292, guid: e15ce6f35a31c483588c2a024eb46e3c, type: 3}
+    DisplayName: Rectangle Arena
+  - Id: tshape
+    Prefab: {fileID: 944720600218478239, guid: 3133425cda9654309b5740c2157e8006, type: 3}
+    DisplayName: T-Shape Arena

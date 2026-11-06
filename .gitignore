@@ -58,6 +58,9 @@ sysinfo.txt
 *.unitypackage
 *.app
 
+# WebGL build output
+/[Ww]eb[Gg][Ll][-_]*[Bb]uild*/
+
 # Crashlytics generated file
 crashlytics-build.properties
 
@@ -76,3 +79,6 @@ crashlytics-build.properties
 
 # JetBrains
 *.DotSettings.user
+
+# Design document — not part of the source, never commit
+Zoo world_2026.pdf
