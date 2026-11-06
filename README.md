@@ -4,6 +4,8 @@
 
 Unity **6000.3.28f1** (URP).
 
+Note: the project was created and tested on macOS only. It has not been tried on Windows.
+
 ## Custom packages used
 
 - **VContainer** (`jp.hadashikick.vcontainer`, via OpenUPM): dependency injection.
