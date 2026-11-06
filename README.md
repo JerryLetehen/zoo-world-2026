@@ -79,3 +79,7 @@ The food chain is defined by the `Diet` list on each `AnimalDefinition`.
 - Prey meeting prey simply bounce off each other.
 
 For example, to make a Hawk that eats Frogs and Snakes, add Frog and Snake to the Hawk definition's diet. Nothing else needs to change.
+
+## AI disclosure
+
+This project was built with AI help. I wrote the specs and instructions. An AI agent (Kiro) generated most of the code.
